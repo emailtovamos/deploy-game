@@ -14,3 +14,15 @@ Cretae image
 Deploy the image in a pod
 Write Deployment yaml
 Deploy in gcloud
+
+Steps to create docker image and push it to registry: 
+
+    docker login
+
+    docker build -t "game:v0" .
+
+    docker images
+
+    docker tag game:v0 emailtovamos/game-repo
+
+    docker push emailtovamos/game-repo
