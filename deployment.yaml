@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: game
 spec:
-  minReadySeconds: 30
+  minReadySeconds: 1
   selector:
     matchLabels:
       mylabelname: game
