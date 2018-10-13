@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: game
-        image: emailtovamos/game-repo
+        image: emailtovamos/game-repo:latest
