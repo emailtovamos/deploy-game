@@ -26,3 +26,7 @@ Steps to create docker image and push it to registry:
     docker tag game:v0 emailtovamos/game-repo
 
     docker push emailtovamos/game-repo
+
+kubectl deploy -f pod.yaml
+
+kubectl deploy -f service.yaml
