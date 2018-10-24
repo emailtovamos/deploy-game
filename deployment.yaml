@@ -3,12 +3,11 @@ kind: Deployment
 metadata:
   name: game
 spec:
-  minReadySeconds: 1
   selector:
     matchLabels:
       mylabelname: game
   replicas: 1
-  template: #template for pods
+  template:
     metadata:
       labels: 
         mylabelname: game
