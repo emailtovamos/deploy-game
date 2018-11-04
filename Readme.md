@@ -10,7 +10,7 @@ In this example you will learn:
 
     How Deployment solves issue with replicaset
 
-Docker commands:
+Docker commands to build image of the application:
 
     docker build -t webserver-image:v1 .
 
@@ -20,11 +20,11 @@ Docker commands:
 
 Make sure the main file is named index.html
 
-Steps: 
+**Steps:**
 
-Have the game
+Have the game in folder
 Create Dockerfile
-Cretae image
+Create image
 Deploy the image in a pod
 Write Deployment yaml
 Deploy in gcloud
