@@ -38,13 +38,19 @@
 		<p>Click on the boxes and squares as quickly as you can!</p>
 	
 		<p class="bold">Your time: <span id="timeTaken"></p>
+
+		<p class="bold">Best score: <span id="bestScore"></p>
 	
 
 		<div id="shape"></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	
 		<script type="text/javascript">
 		
 			var start = new Date().getTime();
+
+			var highScore;
 			
 			
 			function getRandomColor() {
@@ -57,6 +63,22 @@
 			}
 		
 			function makeShapeAppear(){
+				var url = "http://localhost:8080/getbs"
+				// $.get("http://localhost:8080/getbs", function(data, status){
+				// 	alert("Data: " + data.hs + "\nStatus: " + status);
+				// }, 'html');
+
+				$.ajax({
+					url: url,
+					dataType: "jsonp",
+					success: function (data) {
+						console.log(data.hs)
+						document.getElementById("bestScore").innerHTML= data.hs + "s" ; 
+						highScore = data.hs;
+					}
+				});
+
+				
 			
 				var top = Math.random()*400;
 				
@@ -110,6 +132,24 @@
 				var timeTaken = (end-start)/1000; 
 				
 				document.getElementById("timeTaken").innerHTML=timeTaken + "s" ; 
+
+				// var seturl = "localhost:8080/setbs/?hs=" + timeTaken; 
+				var seturl = "http://localhost:8080/setbs/" + timeTaken; 
+
+				// var url = "http://localhost:8080/getbs"
+				// $.get("http://localhost:8080/getbs", function(data, status){
+				// 	alert("Data: " + data.hs + "\nStatus: " + status);
+				// }, 'html');
+				if (timeTaken < highScore) {
+					$.ajax({
+						url: seturl,
+						dataType: "jsonp",
+						success: function (data) {
+							console.log(data.hs)
+							document.getElementById("bestScore").innerHTML= data.hs + "s" ; 
+						}
+					});
+				}
 			
 				appearAfterDelay();
 			
