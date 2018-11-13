@@ -1,16 +1,30 @@
-docker build -t webserver-image:v1 .
+In this example you will learn: 
 
-docker images
+    How to write a pod definition in Kubernetes. 
+    
+    How to expose the pod by writing a service
+    
+    Why writing a pod directly is a bad idea and how Replicaset solves it
 
-docker run -d -p 80:80 webserver-image:v1
+    Drawbacks of Replicaset
 
-Make sure the main file is names index.html
+    How Deployment solves issue with replicaset
 
-Steps: 
+Docker commands to build image of the application:
 
-Have the game
+    docker build -t webserver-image:v1 .
+
+    docker images
+
+    docker run -d -p 80:80 webserver-image:v1
+
+Make sure the main file is named index.html
+
+**Steps:**
+
+Have the game in folder
 Create Dockerfile
-Cretae image
+Create image
 Deploy the image in a pod
 Write Deployment yaml
 Deploy in gcloud
@@ -27,6 +41,18 @@ Steps to create docker image and push it to registry:
 
     docker push emailtovamos/game-repo
 
-kubectl deploy -f pod.yaml
+Ensure you have VirtualBox running and the current-context of kubectl is set to be minikube:
 
-kubectl deploy -f service.yaml
+    minikube start
+
+    kubectl config get-contexts
+
+    kubectl config use-context minikube
+
+Run the yaml files: 
+
+    kubectl apply -f pod.yaml
+
+    kubectl apply -f service.yaml
+
+    kubectl apply -f deployment1.yaml

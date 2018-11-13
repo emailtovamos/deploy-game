@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: game
+  name: game-replicaset
 spec:
   selector:
     matchLabels:
