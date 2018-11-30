@@ -15,7 +15,7 @@ func main() {
 	// router.LoadHTMLGlob("index.html")
 	initializeRoutes()
 
-	router.Run()
+	router.Run(":8080")
 }
 
 func initializeRoutes() {
