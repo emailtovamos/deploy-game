@@ -56,3 +56,13 @@ Run the yaml files:
     kubectl apply -f service.yaml
 
     kubectl apply -f deployment1.yaml
+
+
+Test: 
+
+A test might be to check if setting a highscore gets reflected while you try to get the highscore. 
+
+Backend: 
+
+Make the game harder by making shapes smaller if a user plays well. These decisions can be made in another service running on Go backend. There can be gRPC connections between this service, the highscore service and the BFF service.
+
