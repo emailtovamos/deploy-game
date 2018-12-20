@@ -44,7 +44,7 @@ func handleSet(c *gin.Context) {
 	// })
 
 	hs := c.Param("hs")
-	bestScore , _ = strconv.ParseFloat(hs, 64)
+	bestScore, _ = strconv.ParseFloat(hs, 64)
 
 	c.JSONP(200, gin.H{
 		"hs": hs,
