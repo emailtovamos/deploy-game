@@ -61,6 +61,7 @@ Run the yaml files:
 Test: 
 
 A test might be to check if setting a highscore gets reflected while you try to get the highscore. 
+CircleCI can be included with this test. Also to deploy to Google Cloud.
 
 Backend: 
 

@@ -42,8 +42,8 @@
 			}
 		
 			function makeShapeAppear(){
-				var url = "http://localhost:8080/getbs"
-				// $.get("http://localhost:8080/getbs", function(data, status){
+				var url = "http://localhost:8081/getbs"
+				// $.get("http://localhost:8081/getbs", function(data, status){
 				// 	alert("Data: " + data.hs + "\nStatus: " + status);
 				// }, 'html');
 				$.ajax({
@@ -83,10 +83,10 @@
 				var end = new Date().getTime();
 				var timeTaken = (end-start)/1000; 
 				document.getElementById("timeTaken").innerHTML=timeTaken + "s" ; 
-				// var seturl = "localhost:8080/setbs/?hs=" + timeTaken; 
-				var seturl = "http://localhost:8080/setbs/" + timeTaken; 
-				// var url = "http://localhost:8080/getbs"
-				// $.get("http://localhost:8080/getbs", function(data, status){
+				// var seturl = "localhost:8081/setbs/?hs=" + timeTaken; 
+				var seturl = "http://localhost:8081/setbs/" + timeTaken; 
+				// var url = "http://localhost:8081/getbs"
+				// $.get("http://localhost:8081/getbs", function(data, status){
 				// 	alert("Data: " + data.hs + "\nStatus: " + status);
 				// }, 'html');
 				if (timeTaken < highScore) {
