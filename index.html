@@ -32,6 +32,7 @@
 		<script type="text/javascript">
 			var start = new Date().getTime();
 			var highScore;
+			var size;
 			function getRandomColor() {
 				var letters = '0123456789ABCDEF';
 				var color = '#';
@@ -59,9 +60,9 @@
 				var left = Math.random()*400;
 				var width = Math.random()*200 + 100;
 				if(Math.random() > 0.5){
-					document.getElementById("shape").style.borderRadius = "50%";				
+					document.getElementById("shape").style.borderRadius = "50%";	// Circle			
 				} else {
-					document.getElementById("shape").style.borderRadius = "0";
+					document.getElementById("shape").style.borderRadius = "0"; // Square
 				}
 				document.getElementById("shape").style.width= width + "px";
 				document.getElementById("shape").style.height= width + "px";
